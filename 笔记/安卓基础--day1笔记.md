@@ -91,11 +91,11 @@
 	 
 	add-ons:预留的一个附加目录
 	build-tools:构建工具目录
-	docs: 文档目录
+	*****docs: 文档目录
 	extras：开发中额外提供的一些工具及jar
-	platforms: 不同版本android的核心jar包
-	platforms-tools：平台一些相关的工具
-	sources：源码
+	*****platforms: 不同版本android的核心jar包
+	*****platforms-tools：平台一些相关的工具
+	*****sources：源码
 	system-images：系统镜像文件
 	tools：开发中使用的一些工具，如9path，做图片拉伸适配的。
 
@@ -170,7 +170,7 @@
 	5.adb uninstall packagename; 卸载一个应用
 	
 	
-	
+	//三个指令联合使用来解决adb被占用，或断开连接的情况
 	6.adb kill-server : 结束adb服务的链接
 	7.adb start-server ：开启adb服务的链接
 	8.netstat -oan 查看端口: 查看端口  
@@ -219,8 +219,37 @@
 	
 #16.四种方法写按钮点击事件 
 
+		1.匿名内部类的方式
+		2. 创建一个类实现onclickListener，实现onclick方法，设置控件点击事件时传一个类的对象。
+		3. 让当前类实现onclickListener，设置控件点击事件时传一个this。这种方式适合按钮比较多的情况，一般在公司采用该方式。
+		4. 在布局文件中为控件添加一个onclick属性，在布局对应的Activity中写一个一onclick属性值为名的方法，要public,传一个View类型的参数。比较适合做简单的测试。
 
 
 
 #17.Android中常用布局 (多练习) table div+css
 	
+	1.线性布局  LinearLayout
+		orientation:方向；vertical，垂直；horizontal,水平
+		gravity:对齐方式，子控件相对于当前控件的对齐方式
+		layout_gravity：当前控件相对于父控件的对齐方式
+		margin:当前控件相对于四周的间距。
+		padding：当前控件中的子控件相对于当前控件四周的间距。
+
+	2.相对布局  RelativeLayout 都是从左上角开始布局，要控制位置需要设置每个控件相对于其他控件的位置。
+		layout_below:位于哪个控件的下方
+		layout_above:位于哪个控件的上方
+		layout_toLeftOf:指定当前控件位于哪个控件的左边
+		layout_toRightOf：指定当前控件位于哪个控件的右边
+		layout_alignParentRight:当前控件基于父窗体的对其方式
+		layout_centerHorizontal:水平居中
+		layout_centerVertical：垂直居中
+		layout_centerInParent:位于父窗体的中间
+		
+ 
+	3.帧布局  FrameLayout
+
+		帧布局中的子控件都是一层一层向上叠加的。
+
+	4.表格布局  TableLayouts
+			TableLayout 中一个TableRow代表一行，TableRow中的一个控件代表一列 
+	5.绝对布局（被抛弃） AbsoluteLayout
