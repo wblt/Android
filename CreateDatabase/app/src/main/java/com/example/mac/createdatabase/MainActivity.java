@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
         SQLiteDatabase db = mysqliteOpenHelper.getReadableDatabase();
 
-        
+
+
+
     }
 }
