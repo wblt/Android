@@ -11,4 +11,5 @@ public class NewsBean {
     public String des;
     public int icon;
     public String news_url;
+
 }
