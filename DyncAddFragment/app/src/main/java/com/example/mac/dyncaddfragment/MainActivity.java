@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
         int height = size.y;
 
         android.app.FragmentManager fragmentManager = getFragmentManager();
-
         //横屏和竖屏切换不同的布局
         android.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
         if (height > width) {
