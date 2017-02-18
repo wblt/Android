@@ -13,7 +13,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         android.app.FragmentManager fragmentManager = getFragmentManager();
 
         android.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
@@ -21,7 +20,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         transaction.replace(R.id.ll,new WxFragment());
 
         transaction.commit();
-
 
         //加载控件
         Button bt_wx = (Button) findViewById(R.id.bt_wx);
@@ -37,7 +35,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bt_me.setOnClickListener(this);
 
         //默认显示这是微信的界面
-
     }
 
     @Override
